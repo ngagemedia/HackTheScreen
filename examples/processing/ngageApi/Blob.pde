@@ -17,12 +17,12 @@ class Blob {
   void update(OscMessage theOscMessage) {
     id                = theOscMessage.get(0).intValue();
     gid               = theOscMessage.get(1).intValue();
-    centerPos.x       = theOscMessage.get(2).floatValue()*width;
-    centerPos.y       = theOscMessage.get(3).floatValue()*height;
-    boundingBox.x     = theOscMessage.get(4).floatValue()*width;
-    boundingBox.y     = theOscMessage.get(5).floatValue()*height;
-    boundingBox.w     = theOscMessage.get(6).floatValue()*width;
-    boundingBox.h     = theOscMessage.get(7).floatValue()*height;
+    centerPos.x       = theOscMessage.get(2).floatValue();
+    centerPos.y       = theOscMessage.get(3).floatValue();
+    boundingBox.x     = theOscMessage.get(4).floatValue();
+    boundingBox.y     = theOscMessage.get(5).floatValue();
+    boundingBox.width  = theOscMessage.get(6).floatValue();
+    boundingBox.height = theOscMessage.get(7).floatValue();
     velocity.x        = theOscMessage.get(8).floatValue();
     velocity.y        = theOscMessage.get(9).floatValue();
     acceleration.x    = theOscMessage.get(10).floatValue();
@@ -30,8 +30,8 @@ class Blob {
     contours.clear();
     for (int i = 12; i < theOscMessage.arguments().length; i += 2) {
       PVector point = new PVector();
-      point.x = theOscMessage.get(i).floatValue()*width;
-      point.y = theOscMessage.get(i + 1).floatValue()*width;
+      point.x = theOscMessage.get(i).floatValue();
+      point.y = theOscMessage.get(i + 1).floatValue();
       contours.add(point);
     }
 

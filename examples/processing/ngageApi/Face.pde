@@ -16,12 +16,12 @@ class Face {
   void update(OscMessage theOscMessage) {
     id                = theOscMessage.get(0).intValue();
     gid               = theOscMessage.get(1).intValue();
-    centerPos.x       = theOscMessage.get(2).floatValue()*width;
-    centerPos.y       = theOscMessage.get(3).floatValue()*height;
-    boundingBox.x     = theOscMessage.get(4).floatValue()*width;
-    boundingBox.y     = theOscMessage.get(5).floatValue()*height;
-    boundingBox.w     = theOscMessage.get(6).floatValue()*width;
-    boundingBox.h     = theOscMessage.get(7).floatValue()*height;
+    centerPos.x       = theOscMessage.get(2).floatValue();
+    centerPos.y       = theOscMessage.get(3).floatValue();
+    boundingBox.x     = theOscMessage.get(4).floatValue();
+    boundingBox.y     = theOscMessage.get(5).floatValue();
+    boundingBox.width     = theOscMessage.get(6).floatValue();
+    boundingBox.height     = theOscMessage.get(7).floatValue();
     velocity.x        = theOscMessage.get(8).floatValue();
     velocity.y        = theOscMessage.get(9).floatValue();
     acceleration.x    = theOscMessage.get(10).floatValue();

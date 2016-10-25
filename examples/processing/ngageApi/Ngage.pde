@@ -26,14 +26,14 @@ class Ngage {
     InetAddress address = InetAddress.getLocalHost();
     myIp = address.getHostAddress();
     ipList =  int(split(myIp, '.'));
-    //myMessage.add(ipList[0]);
-    //myMessage.add(ipList[1]);
-    //myMessage.add(ipList[2]);
-    //myMessage.add(ipList[3]);
-    myMessage.add(192);
-    myMessage.add(168);
-    myMessage.add(7);
-    myMessage.add(247);
+    myMessage.add(ipList[0]);
+    myMessage.add(ipList[1]);
+    myMessage.add(ipList[2]);
+    myMessage.add(ipList[3]);
+    //myMessage.add(192);
+    //myMessage.add(168);
+    //myMessage.add(7);
+    //myMessage.add(247);
     oscP5.send(myMessage, hackTheScreenAPI);
   } 
   catch (Exception e) {
@@ -98,5 +98,4 @@ void oscEvent(OscMessage theOscMessage) {
     println("### addrpattern\t"+theOscMessage.addrPattern());
     println("### typetag\t"+theOscMessage.typetag());
     }
-}
 }
