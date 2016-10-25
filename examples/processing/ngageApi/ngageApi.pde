@@ -1,4 +1,4 @@
-/** //<>//
+/** //<>// //<>//
  Simple Example for talking to Ngage API for Blob & Face tracking
  It connects via OSC to the server, which then sends a osc data stream
  to the client (this). 
@@ -55,7 +55,7 @@ void drawBlob(Blob b) {
   noFill();
   stroke(255, 100);
   beginShape();
-  for (int j=0; i< b.contours.size(); j++) {
+  for (int j = 0; j< b.contours.size(); j++) {
     PVector pt = (PVector) b.contours.get(j);
     vertex(pt.x*width, pt.y*height);
   }
