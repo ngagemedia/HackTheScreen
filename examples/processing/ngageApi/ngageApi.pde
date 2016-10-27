@@ -1,4 +1,4 @@
-/** //<>// //<>//
+/** //<>//
  Simple Example for talking to Ngage API for Blob & Face tracking
  It connects via OSC to the server, which then sends a osc data stream
  to the client (this). 
@@ -14,7 +14,6 @@ void setup() {
 
 void draw() {
   background(0);
-
 
   // Let's loop through all available blobs
   for (int i = 0; i < mApi.blobs.size(); i++) {
