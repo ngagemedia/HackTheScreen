@@ -55,4 +55,33 @@ class Blob {
     }
     endShape();
   }
+
+  boolean isInside(PVector p)
+  {
+    // check for inside the bounding box
+    if (p.x < boundingBox.x || boundingBox.x + boundingBox.width < p.x)
+      return false;
+    if (p.y < boundingBox.y || boundingBox.y + boundingBox.height < p.y)
+      return false;
+
+    // it might be inside. do the thing
+    // http://stackoverflow.com/questions/217578/how-can-i-determine-whether-a-2d-point-is-within-a-polygon
+    int nvert = contours.size();
+    boolean c = false;
+
+    for (int i = 0, j = nvert-1; i < nvert; j = i++) {
+      PVector pi = contours.get(i);
+      PVector pj = contours.get(j);
+
+      // threading error?
+      if (pi == null || pj == null)
+         return false;
+
+      if ( ((pi.y > p.y) != (pj.y > p.y))
+      && p.x < (pj.x-pi.x) * (p.y-pi.y) / (pj.y-pi.y) + pi.x )
+       c = !c;
+    }
+
+    return c;
+  }
 }
