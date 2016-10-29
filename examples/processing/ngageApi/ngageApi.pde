@@ -56,7 +56,8 @@ void drawBlob(Blob b) {
   beginShape();
   for (int j = 0; j< b.contours.size(); j++) {
     PVector pt = (PVector) b.contours.get(j);
-    vertex(pt.x*width, pt.y*height);
+    if (pt != null)
+      vertex(pt.x*width, pt.y*height);
   }
   endShape();
 
