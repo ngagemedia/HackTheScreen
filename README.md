@@ -17,9 +17,9 @@ Our beta version contains blob tracking and facial tracking on basis of an RGB c
 
 ##### Connecting to server
 A connection is made by registering your IP address at the server. This is done via the following OSC Command
-/OSC/SetClientIP 123 123 123 123
+/OSC/AddClientIP 123 123 123 123
 The server IP address will be 192.168.7.5 and the port is 7004.
-Where you have to send your IP as 4 seperate integers.
+Where you have to send your IP as 4 separate integers.
 For the coding jam the server is set up to send all data to the clients. In real life you are able to cherry pick the data you need for your app.
 
 ##### Receiving from server
@@ -27,7 +27,7 @@ For the coding jam the server is set up to send all data to the clients. In real
 The server is set up send the data to port number 7004 on your IP.
 
 
-##### The /ImageProcessing data
+##### The /ImageProcessing/Blobs/BlobData data
 
 Once connected the server sends many OSC messages to your port 7004. /ImageProcessing is the standard address where this goes.
 Next is /Faces/FaceData for face detection and /Blobs/BlobData for blobtracking.
