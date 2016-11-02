@@ -51,7 +51,8 @@ class Blob {
     beginShape();
     for (int i=0; i < contours.size(); i++){
       PVector pt = contours.get(i);
-      vertex(pt.x, pt.y);
+      if (pt != null)
+        vertex(pt.x, pt.y);
     }
     endShape();
   }
